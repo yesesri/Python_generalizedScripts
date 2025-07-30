@@ -4,3 +4,4 @@ Scripts for Basic Bioinformatics tasks :
 - Split FASTA file into n equal size files ( split_fasta.py )
 - Iterate FASTQ reads, trim low quality sequence , generate kmers and plot a histogram for genome assessment  (kmer_counter.py)
 - Rename duplicate read headers (renameCDS_ids.py)
+- 'parse_DRAGEN_output.py' : script to parse illumina DRAGEN out files and summarize.
