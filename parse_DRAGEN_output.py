@@ -13,7 +13,6 @@ import textwrap
 from os import system
 import pandas as pd
 import sys
-sys.path.insert(0,"/research/bsi/projects/staff_analysis/m189786/python_packages/")
 import xlrd
 #==================================================================#
 def parse_PlateMaps(dir) :
@@ -71,9 +70,7 @@ def real_main():
                       "--basePath",
                       type="str",
                       help="location to current run analyses folder, where per sample dragen out folders were "
-                           "located.  \
-                           \n Example : /research/bsi/projects/PI/tertiary/Cerhan_James_cerhan/s301447.COVID-19"
-                           "/processing/bs/output/211109_A00220_0264_BHJJHLDRXY/analyses/")
+                           "located.")
 
     parser.add_option('-r',
                       "--run_label",
@@ -94,8 +91,7 @@ def real_main():
                       "--CDC_VC_file",
                       type="str",
                       help="location to CDC variant classification file\n"
-                           "location : /research/bsi/projects/PI/tertiary/Cerhan_James_cerhan/s301447.COVID-19"
-                           "/CDC_variant_classifications/current/CDC_SARS_CoV-2_Variant_Classifications_as_of_10.06.2021.xlsx")
+                           "location : CDC_SARS_CoV-2_Variant_Classification file ")
     parser.add_option('-s',
                       "--spikeN_count_file",
                       type="str",
@@ -142,8 +138,7 @@ def real_main():
         NRCA_map_dict[x[0]] = line
     #####
     zip_county_map_dict = {}
-    for line in open("/research/bsi/projects/PI/tertiary/Cerhan_James_cerhan/s301447.COVID-19"
-                     "/m189786_Illumina_DRAGEN_summary_scripts/Zip_county_062021.txt") :
+    for line in open("Zip_county.txt") :
         x = line.strip().split("\t")
         if(line.count("res_ratio") > 0 ) : continue
         # one zip code can have multiple county number's , pick the one with high residential ratio.
